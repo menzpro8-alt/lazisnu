@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Hijau terang, segar, dan premium (Vibrant Islamic Green) */
+    --color-nu-900: #064e3b;
+    --color-nu-800: #065f46;
+    --color-nu-700: #047857;
+    --color-nu-600: #059669; /* Primary Green */
+    --color-nu-500: #10b981; /* Bright Accent Green */
+    --color-nu-400: #34d399;
+    --color-nu-300: #6ee7b7;
+    --color-nu-200: #a7f3d0;
+    --color-nu-100: #d1fae5;
+    --color-nu-50: #ecfdf5;   /* Light green background tint */
+
+    --color-gold-500: #f59e0b;
+    --color-gold-400: #fbbf24;
+    --color-gold-300: #fcd34d;
+
+    --sidebar-width: 280px;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f7fee7; /* Sangat segar, perpaduan hijau-putih kekuningan */
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    color: #1f2937;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #10b981;
+    color: white;
+  }
+}
+
+/* Scrollbar Styling */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f0fdf4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #a7f3d0;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #34d399;
+  }
+}
+
+/* Animation Keyframes */
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 0 20px 5px rgba(16, 185, 129, 0.2); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    animation: slideInLeft 0.4s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideInRight 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #ecfdf5 25%, #d1fae5 50%, #ecfdf5 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+  }
+
+  /* Glass Card - Light & Clean */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.12);
+    box-shadow: 0 4px 20px -2px rgba(16, 185, 129, 0.05);
+  }
+
+  /* Glass Dark replaced with Clean Light Green Glass for Premium White-Green look */
+  .glass-light-green {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(6, 78, 59, 0.1);
+  }
+
+  .gradient-nu {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  }
+
+  .gradient-nu-light {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  }
+
+  .text-gradient-nu {
+    background: linear-gradient(135deg, #059669, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
